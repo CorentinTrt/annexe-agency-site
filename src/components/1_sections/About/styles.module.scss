@@ -1,0 +1,119 @@
+.about {
+  position: relative;
+  width: 100vw;
+  height: auto;
+  padding: 60px 5vmax;
+
+  :nth-child(n) {
+    color: var(--c-black);
+  }
+
+  h2 {
+    position: absolute;
+    left: 2%;
+    font-size: 2vmin;
+  }
+
+  @include M.on-desktop {
+    padding: 120px 10vmax;
+  }
+
+  &--description {
+    position: relative;
+    margin-bottom: 60px;
+
+    .title {
+      @include T.body-s;
+
+      top: 2vmin;
+    }
+
+    .description {
+      @include T.body-l;
+
+      font-size: 4vmin;
+      line-height: 5vmin;
+      text-indent: 20vmin;
+    }
+
+    @include M.on-desktop {
+      margin-bottom: 120px;
+    }
+  }
+
+  &--philosophy {
+    position: relative;
+    margin-top: 60px;
+    margin-bottom: 60px;
+
+    .title {
+      @include T.body-s;
+
+      top: 1.25vmin;
+      writing-mode: vertical-lr;
+    }
+
+    .description {
+      @include T.body-m;
+
+      padding-left: 5vmax;
+      font-size: 2.5vmin;
+      line-height: 3.5vmin;
+    }
+
+    @include M.on-desktop {
+      margin-top: 120px;
+      margin-bottom: 120px;
+
+      .title {
+        writing-mode: horizontal-tb;
+      }
+
+      .description {
+        padding-left: 20vmax;
+      }
+    }
+  }
+
+  &--actions {
+    position: relative;
+    margin-top: 60px;
+
+    ul {
+      padding-left: 5vmax;
+
+      li {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+    }
+
+    .title {
+      @include T.body-s;
+
+      top: 1.25vmin;
+      writing-mode: vertical-lr;
+      white-space: nowrap;
+    }
+
+    .action {
+      @include T.body-m;
+
+      font-size: 2.5vmin;
+      line-height: 3.5vmin;
+    }
+
+    @include M.on-desktop {
+      margin-top: 120px;
+
+      ul {
+        padding-left: 20vmax;
+      }
+
+      .title {
+        writing-mode: horizontal-tb;
+      }
+    }
+  }
+}

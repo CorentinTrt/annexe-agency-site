@@ -3,12 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "//": "-- NEXT --",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "//": "-- CHECKS --",
+    "lint": "next lint",
+    "//": "-- DOCKER --",
+    "docker-dev": "docker-compose -f docker-compose.dev.yml up --build --force-recreate",
+    "docker-prod": "docker-compose -f docker-compose.prod.yml up --build --force-recreate"
   },
   "dependencies": {
+    "@ashthornton/asscroll": "^2.0.11",
     "@types/node": "18.11.9",
     "@types/react": "18.0.24",
     "@types/react-dom": "18.0.8",
@@ -17,6 +23,18 @@
     "next": "13.0.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "sass": "^1.55.0",
+    "tiny-emitter": "^2.1.0"
+  },
+  "devDependencies": {
+    "@svgr/webpack": "^6.2.1",
+    "eslint-config-prettier": "^8.5.0",
+    "prettier": "^2.7.1",
+    "stylelint": "^14.13.0",
+    "stylelint-config-css-modules": "^4.1.0",
+    "stylelint-config-prettier-scss": "^0.0.1",
+    "stylelint-config-property-sort-order-smacss": "^9.0.0",
+    "stylelint-config-standard-scss": "^5.0.0",
     "typescript": "4.8.4"
   }
 }

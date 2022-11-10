@@ -1,0 +1,47 @@
+.hooking {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: V.$c-blue;
+
+  .bg-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 5vmax;
+
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .text-container {
+      @include M.flex-centered-centered;
+
+      position: absolute;
+      top: 0;
+      left: 0;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      background: url("/images/bg_gif.gif");
+      background-clip: text;
+      background-color: V.$c-blue;
+      -webkit-text-fill-color: transparent;
+
+      &.animated {
+        transition: opacity 3s ease-in-out;
+        opacity: 1;
+      }
+
+      .text {
+        @include T.h-xl;
+
+        font-size: 12vmin;
+        line-height: 14vmin;
+      }
+    }
+  }
+}

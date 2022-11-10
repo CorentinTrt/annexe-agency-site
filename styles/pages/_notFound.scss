@@ -1,0 +1,12 @@
+.not-found {
+	position: relative;
+	width: 100vw;
+	height: 100vh;
+
+	h1 {
+		@include absolute-centered;
+
+		font-size: 6vmin;
+		white-space: nowrap;
+	}
+}

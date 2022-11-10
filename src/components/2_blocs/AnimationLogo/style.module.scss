@@ -1,0 +1,21 @@
+.animation-logo {
+  @include M.absolute-centered;
+
+  z-index: 999;
+  width: fit-content;
+  height: 100%;
+
+  img {
+    height: 100vh;
+    object-fit: cover;
+
+    &.animated {
+      transform: scale(20);
+      transition: transform 5s ease-in-out;
+    }
+
+    &.over {
+      display: none;
+    }
+  }
+}

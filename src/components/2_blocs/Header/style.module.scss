@@ -1,0 +1,124 @@
+$bar-height: 2px;
+$bar-space: 10px;
+
+.header {
+  display: flex;
+  position: fixed;
+  z-index: 900;
+  top: 0;
+  left: 0;
+  justify-content: space-between;
+  width: 100%;
+  padding: 3vmax 6vmax;
+  transition: transform 0.4s ease-in-out;
+  background-color: V.$c-blue;
+  will-change: transform;
+
+  &.hidden {
+    transform: translateY(-100%);
+    transition: transform 0.4s ease-in-out;
+  }
+
+  &--menu {
+    .item-group {
+      display: flex;
+      gap: 3vmax;
+
+      a {
+        @include T.body-s;
+
+        cursor: pointer;
+
+        span {
+          position: relative;
+          overflow: hidden;
+          transition: 0.6s;
+
+          .out {
+            display: inline-flex;
+          }
+
+          .in {
+            position: absolute;
+            left: 0;
+            transform: translateX(100%);
+            opacity: 0;
+          }
+        }
+
+        &:hover {
+          span {
+            .out {
+              transform: translateX(-100%);
+              opacity: 0;
+            }
+
+            .in {
+              transform: translateX(0);
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &--menu-mobile {
+    .button {
+      position: relative;
+      height: calc($bar-height * 3 + $bar-space * 2);
+
+      .bars {
+        @include M.absolute-centered-y;
+
+        z-index: 1000;
+        right: 20%;
+        width: 3vmax;
+        height: 2px;
+        transition: background 0.25s ease;
+        background: V.$c-white;
+
+        &::before,
+        &::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          transform-origin: center center;
+          transition: all 0.25s ease;
+          background: inherit;
+        }
+
+        &::before {
+          top: -10px;
+        }
+
+        &::after {
+          bottom: -10px;
+        }
+      }
+
+      &.opened {
+        .bars {
+          background: transparent;
+
+          &::before,
+          &::after {
+            background-color: V.$c-white;
+          }
+
+          &::before {
+            top: 0;
+            transform: rotate(45deg);
+          }
+
+          &::after {
+            bottom: 0;
+            transform: rotate(-45deg);
+          }
+        }
+      }
+    }
+  }
+}

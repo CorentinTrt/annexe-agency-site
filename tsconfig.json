@@ -10,6 +10,16 @@
     "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "node",
+		"baseUrl": ".",
+		"paths": {
+			"@sections/*": ["/src/components/1_sections/*"],
+			"@blocs/*": ["src/components/2_blocs/*"],
+			"@shared/*": ["src/components/3_shared/*"],
+			"@ctypes/*": ["src/types/*"],
+      "@constants/*": ["src/constants/*"],
+			"@utils/*": ["src/utils/*"],
+			"@svgs/*": ["public/svgs/*"]
+		},
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",

@@ -1,0 +1,20 @@
+version: "3.8"
+
+services:
+  frontend-standalone:
+    platform: linux/x86_64
+    image: corentintrt/annexe-agency-site
+    ports:
+      - 3000:3000
+      - 8080:8080
+      - 80:80
+      - 443:443
+    build:
+      context: ./
+      dockerfile: Dockerfile.dev
+    volumes:
+      - ./src:/app/src
+      - ./styles:/app/styles
+      - ./public:/app/public
+    # env_file:
+    #   - .env

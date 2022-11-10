@@ -1,0 +1,100 @@
+.contact {
+  display: block;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+
+  :nth-child(n) {
+    color: V.$c-black;
+  }
+
+  .section {
+    width: 100%;
+    padding: 8vmax;
+
+    @include M.on-desktop {
+      width: 50%;
+      padding-top: 15vmax;
+    }
+
+    .talk {
+      @include T.body-s;
+
+      margin-bottom: 2.5vmax;
+      font-size: 2vmin;
+    }
+  }
+
+  &--cellphone {
+    .group {
+      display: flex;
+      flex-direction: column;
+      gap: 2vmax;
+      margin-top: 3vmax;
+
+      .item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .name {
+          @include T.h-s;
+        }
+
+        .job {
+          @include T.body-s;
+        }
+
+        .cell-number {
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+
+  &--other {
+    h4 {
+      margin-top: 3vmax;
+      margin-bottom: 6vmax;
+    }
+
+    .story {
+      @include T.body-s;
+    }
+
+    .email-adress {
+      @include T.body-m;
+    }
+
+    .visit {
+      display: flex;
+      align-items: center;
+      margin-bottom: 2.5vmax;
+
+      .come {
+        @include T.body-s;
+
+        margin-right: 3vmax;
+        margin-bottom: 0;
+      }
+
+      svg {
+        transition: transform 0.3s ease-out;
+        cursor: pointer;
+
+        &:hover {
+          transform: scale(1.1);
+          transition: transform 0.3 ease-in;
+        }
+      }
+    }
+
+    .adress {
+      margin-top: 3vmax;
+    }
+  }
+
+  @include M.on-desktop {
+    display: flex;
+  }
+}
